@@ -61,26 +61,26 @@
                             <div class="form-row">
                                 <div class="form-group col-6">
                                     <label class="sr-only" for="firstName">First Name</label>
-                                    <input type="email" class="form-control form-control-sm" id="firstName" placeholder="First Name" required/>
+                                    <input type="email" class="form-control form-control-sm" id="firstName" placeholder="First Name" />
                                  </div>
                                  <div class="form-group col-6">
                                      <label class="sr-only" for="lastName">Last Name</label>
-                                     <input type="email" class="form-control form-control-sm" id="lastName" placeholder="Last Name" required />
+                                     <input type="email" class="form-control form-control-sm" id="lastName" placeholder="Last Name" />
                                   </div>
                                  <div class="form-group col-12">
                                      <label class="sr-only" for="loginEmail">Email Address</label>
-                                    <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Email Address" required />
+                                    <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Email Address" />
                                  </div>
                                  <label class="col-sm-6 col-form-label" for="date">Date of Birth</label>
                                  <div class="col col-sm-6">
-                                     <input class="form-control" type="date" id="date" name="date" placeholder="mm/dd/yyyy" required />
+                                     <input class="form-control" type="date" id="date" name="date" placeholder="mm/dd/yyyy" />
                                  </div>
                             </div> 
                             
                             <div class="form-row">
                                 <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
                                 <a href="thank.html">
-                                    <button type="submit" class="btn btn-secondary btn-outline-warning btn-sm ml-1">Unearth Nofications</button>
+                                    <button type="button" class="btn btn-secondary btn-outline-warning btn-sm ml-1">Unearth Nofications</button>
                                 </a>
                             </div>                            
                         </form>
@@ -99,11 +99,11 @@
         <div class="row row-content align-items-center">
             <div class="col-md-8 mx-auto">
 
-                <div id="homeCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
+                <div id="homeCarousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                                 <h3>How Unearth Began</h3>
-                                <p class="mt-4 d-block">Unearth began as a way to tell my story. From watching my grandmother battle cancer, to losing my ex-fiance, Unearth takes inspiration from pivotal moments of my life. Each character incorporates a different aspect of who I am as a person. As I evolve and grow as a person, so does my story.</p>
+                                <p class="mt-4 d-block">Unearth began as a way to tell my story. From watching my grandmother battle cancer, to moving across country by myself, Unearth takes inspiration from pivotal moments of my life. Each character incorporates a different aspect of who I am as a person. As I evolve and grow as a person, so does my story.</p>
                         </div>
                         <div class="carousel-item"> 
                                 <h3>My Journey</h3>
@@ -114,6 +114,9 @@
                                 <p class="mt-4 d-block">DLC! I plan on adding the last mercenary as a playable character after I finish the novel as an expansion to it. After that, I plan on bringing the other stories I have to life as well after Unearth is complete. Prepare for the next big titles in the future, Inertia and Exhilerate, and welcome to my portfolio!</p>
                         </div>
                     </div>
+                    <button class="btn btn-secondary" id="carouselButton">
+                        <i class="fa fa-pause"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -125,9 +128,9 @@
                 <div class="col-6 text-left">
                     <h5 class="ml-3">Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="home.html">Home</a></li>
-                        <li><a href="characters.html">Characters</a></li>
-                        <li><a href="#">About</a></li>
+                        <li class="nav-item"><a href="index.html">Home</a></li>
+                        <li class="nav-item"><a href="characters.html">Characters</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#">About</a></li>
                     </ul>
                 </div>
                 <div class="col-6 text-right">
@@ -145,6 +148,23 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function() {
+            $(".carousel").carousel( { interval: 2000 });
+            $("#carouselButton").click(function(){
+                if ($("#carouselButton").children("i").hasClass("fa-pause")) {
+                    $(".carousel").carousel("pause");
+                    $("#carouselButton").children("i").removeClass("fa-pause");
+                    $("#carouselButton").children("i").addClass("fa-play");
+                } else {
+                $(".carousel").carousel("cycle");
+                    $("#carouselButton").children("i").removeClass("fa-play");
+                    $("#carouselButton").children("i").addClass("fa-pause");
+                }
+            });
+        });
+    </script>
 
 
 </body>
