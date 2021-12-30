@@ -11,7 +11,7 @@ h2 {
 
 .navbar {
   background-color: beige;
-  font-size: 20px; }
+  font-size: 20; }
 
 #wallpaper {
   width: 100%;
@@ -64,7 +64,7 @@ h4 {
   margin-top: 100px; }
 
 .d-block {
-  font-size: 20px;
+  font-size: 20;
   font-family: Verdana, Geneva, Tahoma, sans-serif; }
 
 .fa {
@@ -73,11 +73,11 @@ h4 {
   vertical-align: middle; }
 
 .nav-link {
-  font-size: 22px; }
+  font-size: 20; }
 
 .site-footer {
   background-image: linear-gradient(beige, white);
-  padding: 20px 0;
+  padding: 20, 0;
   margin-top: 450px; }
 
 .list-unstyled {
@@ -85,5 +85,7 @@ h4 {
   display: grid; }
 
 #homeCarousel {
-  border: 10px solid beige; }
+  border: 10px solid, beige; }
 
+header div {
+  backdrop-filter: blur(2px); }
